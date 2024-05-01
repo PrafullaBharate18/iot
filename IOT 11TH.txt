@@ -1,0 +1,44 @@
+IOT 11TH
+
+CODE: 
+
+#include <dht.h>
+dht DHT;
+#define DHT11_PIN A1
+float min_t,max_t;
+void setup()
+{
+DYPCOEI-IQAC-DOC: D- 002
+Serial.begin(9600);
+Serial.println("Humidity (%),\tTemperature (F)"); min_t = 0xffff;
+max_t=0x00;
+}
+void loop()
+{
+// READ DATA
+int chk = DHT.read11(DHT11_PIN);
+// DISPLAY DATA
+Serial.print(DHT.humidity, 1);
+Serial.print("\t");
+Serial.println((DHT.temperature*1.8)+32, 1);
+
+delay(1000);
+}
+
+
+Here’s what the updated code does:
+
+It includes the dht library, which is commonly used for interfacing with DHT11 and DHT22 humidity and temperature sensors.
+The DHT11_PIN is defined as A1, indicating that the DHT11 sensor is connected to analog pin A1.
+The min_t and max_t variables are declared as float to store minimum and maximum temperature values.
+In the setup() function:
+Serial communication is initialized with a baud rate of 9600.
+The message “Humidity (%), Temperature (F)” is printed to the serial monitor.
+The min_t is initialized to a large value (0xffff), and max_t is initialized to a small value (0x00).
+In the loop() function:
+The program continuously runs in a loop.
+The DHT.read11(DHT11_PIN) function reads data from the DHT11 sensor.
+The humidity and temperature values are retrieved from the DHT object.
+The temperature value is converted from Celsius to Fahrenheit using the formula (Celsius * 1.8) + 32.
+The humidity and converted temperature values are printed to the serial monitor.
+There is a delay of 1000 milliseconds (1 second) before the next iteration.

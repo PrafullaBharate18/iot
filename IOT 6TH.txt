@@ -1,0 +1,56 @@
+IOT 6TH
+
+CODE: 
+
+const int green_led = 0;
+const int yellow_led = 1;
+const int red_led = 2;
+unsigned int counter;
+void setup() {
+// put your setup code here, to run once:
+pinMode(green_led, OUTPUT);
+pinMode(red_led, OUTPUT);
+pinMode(yellow_led, OUTPUT);
+
+digitalWrite(yellow_led,HIGH);
+digitalWrite(green_led,HIGH);
+digitalWrite(red_led,HIGH);
+}
+void loop() {
+counter = counter+1;
+delay(200);
+if(counter <= 100)
+{
+digitalWrite(yellow_led,HIGH);
+digitalWrite(green_led,LOW);
+digitalWrite(red_led,HIGH);
+}
+else if((counter > 100)&& (counter <= 200)) {
+digitalWrite(yellow_led,LOW);
+digitalWrite(green_led,HIGH);
+digitalWrite(red_led,HIGH);
+DYPCOEI-IQAC-DOC: D- 002
+}
+else if(counter > 200)
+{
+digitalWrite(yellow_led,HIGH);
+digitalWrite(green_led,HIGH);
+digitalWrite(red_led,LOW);
+}
+if (counter > 210) counter =0;
+}
+
+Here’s what the code does:
+
+It defines three integer constants green_led, yellow_led, and red_led, representing the pin numbers for the corresponding LEDs.
+The counter variable is used to keep track of the loop iterations.
+In the setup() function:
+The pin modes for the LEDs are set to OUTPUT.
+All LEDs (green, yellow, and red) are turned on initially.
+In the loop() function:
+The counter is incremented by 1.
+Depending on the value of counter, different LED states are set:
+If counter is less than or equal to 100, the yellow LED is on, the green LED is off, and the red LED is on.
+If counter is between 100 and 200, the yellow LED is off, the green LED is on, and the red LED is on.
+If counter is greater than 200, the yellow LED is on, the green LED is on, and the red LED is off.
+If counter exceeds 210, it is reset to 0.

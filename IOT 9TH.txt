@@ -1,0 +1,43 @@
+IOT 9TH
+
+CODE: 
+
+
+int red_light_pin= 5;
+int green_light_pin = 6;
+int blue_light_pin = 3;
+unsigned int red,green,blue;
+void setup() {
+pinMode(red_light_pin, OUTPUT);
+pinMode(green_light_pin, OUTPUT);
+pinMode(blue_light_pin, OUTPUT);
+}
+void loop() {
+red = analogRead(A0);
+red = (red/4);
+green = analogRead(A2);
+green = (green/4);
+blue = analogRead(A3);
+DYPCOEI-IQAC-DOC: D- 002
+blue = (blue/4);
+RGB_color(255-red, 255-green, 255-blue); // Red delay(1000);
+}
+void RGB_color(int red_light_value, int green_light_value, int blue_light_value)
+{
+analogWrite(red_light_pin, red_light_value);
+analogWrite(green_light_pin, green_light_value); analogWrite(blue_light_pin, blue_light_
+
+
+Here’s what the code does:
+
+It defines three integer variables red_light_pin, green_light_pin, and blue_light_pin, representing the pin numbers for the corresponding RGB LEDs.
+The red, green, and blue variables are declared to store analog readings.
+In the setup() function:
+The pin modes for the RGB LEDs are set to OUTPUT.
+In the loop() function:
+Analog readings are taken from pins A0, A2, and A3.
+The values are divided by 4 (presumably to scale them down).
+The RGB_color function is called with inverted values (255 minus the original values) to control the RGB LEDs.
+There is a delay of 1 second.
+The RGB_color function:
+Sets the PWM (Pulse Width Modulation) values for the RGB LEDs based on the input parameters.

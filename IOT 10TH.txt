@@ -1,0 +1,36 @@
+IOT 10TH
+
+CODE: 
+
+Monitor Code:
+#include <dht.h>
+dht DHT;
+#define DHT11_PIN A1
+void setup()
+{
+Serial.begin(9600);
+Serial.println("Humidity (%),\tTemperature (C)"); }
+void loop()
+{
+// READ DATA
+int chk = DHT.read11(DHT11_PIN);
+// DISPLAY DATA
+Serial.print(DHT.humidity, 1);
+Serial.print("\t");
+Serial.println(DHT.temperature, 1);
+delay(1000);
+}
+
+
+Here’s what the code does:
+
+It includes the dht library, which is commonly used for interfacing with DHT11 and DHT22 humidity and temperature sensors.
+The DHT11_PIN is defined as A1, indicating that the DHT11 sensor is connected to analog pin A1.
+In the setup() function:
+Serial communication is initialized with a baud rate of 9600.
+The message “Humidity (%), Temperature ©” is printed to the serial monitor.
+In the loop() function:
+The DHT.read11(DHT11_PIN) function reads data from the DHT11 sensor.
+The humidity and temperature values are retrieved from the DHT object.
+The humidity value is printed with one decimal place, followed by a tab character (\t), and then the temperature value with one decimal place.
+There is a delay of 1000 milliseconds (1 second) before the next iteration.
