@@ -1,0 +1,46 @@
+Aim-Write a program using piezo element and use it to play a tune after someone
+knocks
+Objective: Understanding working principle of Buttons & Buzzers
+Hardware: Arduino, Button, Buzzer, etc
+Software: Arduino IDE
+Apparatus: Arduino Uno board, Micro-IoT sensor actuator board, Power adaptor.
+
+Theory:
+In this Practical, we will make a circuit which will play a sound using a buzzer and an LED which
+sound and as example of a complex project, it will light up LED when a button is pressed. For this
+project, we need :
+● Arduino UNO or similar boardPiezo Buzzer – One
+● LED – One
+● 220 Ohm Resistor – One
+● 10K Ohm Resistor – One
+● Pushbutton – One
+● Breadboard – One
+● Jumper Wires – Few
+Push buttons are the basic on-off switching buttons most commonly used in less to highly
+complex electronic devices. Push buttons are able to connect two points whenever they are
+pressed. Push-button acts as a manually operated control device. When the button is pressed
+that means the short circuit is achieved between two points. On the other side when the button
+is not pressed then the open circuit or no connection developed between the points.
+In this article, I will explain to you all the basics about the push button. A push-button is a very
+simple control device but we can operate it with pull-up and pull-down resistors. I will explain to
+you how an LED can be operated using a push button with a pull-up and a pull-down resistor. I
+will also explain to you how a buzzer can be operated with the help of a push-button. All these
+examples will help you to understand all the basics about the push button.
+The push-button has four legs but we can use only two of them because of their internal
+structure. We can connect the push button directly with the VCC or 5-volt power supply. After
+that when we press it then the software will read it as HIGH until we change the state and
+perform the operation. But when the button is released after that system will get confused and
+does not able to recognize what is connected in the input. As result, the software will read HIGH
+or LOW value non-uniformly and assume some noise in this condition, due to which unexpected
+output will be observed. To avoid this situation it is necessary to connect pull-up or pull-down
+resistors with the push button.
+The circuit itself quite simple circuit to set up. Be careful with the positive and negative poles of
+piezo buzzer:
+
+Observation: 
+You can use the Piezo element for both input sensing and output tone generation. 
+In this experiment the user will tap the sensor and read the input values and once a certain 
+threshold is passed can start generating a tone from the Piezo Element.
+
+Conclusion: Executed a program using piezo element and use it to play a tune after someone
+knocks
